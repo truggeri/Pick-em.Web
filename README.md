@@ -4,7 +4,25 @@ The web part of Pick-em, a project for picking winners of sports games.
 
 ## TL;DR
 
-TBD ;)
+This project uses dotnet core to build a web application. It uses four layers to achieve this.
+
+To build the app locally,
+
+```bash
+./scripts/build.sh
+```
+
+To run locally (without Docker),
+
+```bash
+cd src/Pick-em.Web && dotnet run
+```
+
+And finally, to test any given project,
+
+```bash
+cd test/Pick-em.<proj>.Test && dotnet test
+```
 
 ## Background
 
