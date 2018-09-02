@@ -2,11 +2,15 @@
 
 This project is a net standard 2.0 project that focuses on bringing data into the project and saving data out to a persistant data store. The initial target of this application is to use Postgres relational database to store all data. This project will likely mirror the way the Service layer offers actions/services for the domain layer to use, but is not dependent on the domain layer. There will likely be a shared library so they can speak the same language.
 
-## Running
+## Using
 
 ```bash
-dotnet run
+dotnet add reference <relative path>/Pick-em.Lib.Data.csproj
 ```
+
+## Interface
+
+@TODO
 
 ## Dependencies
 

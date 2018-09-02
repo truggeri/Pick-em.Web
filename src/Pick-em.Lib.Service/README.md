@@ -2,11 +2,15 @@
 
 This project is a net standard 2.0 project that focuses on providing logic between the gui and domain layer of the project. This logic should not be _application_ logic, it should be glue logic that ties the core application (domain layer) to the interface with users.
 
-## Running
+## Using
 
 ```bash
-dotnet run
+dotnet add reference <relative path>/Pick-em.Lib.Service.csproj
 ```
+
+## Interface
+
+@TODO
 
 ## Dependencies
 

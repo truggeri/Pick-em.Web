@@ -2,11 +2,15 @@
 
 This project is a net standard 2.0 project that focuses on providing the core application logic. This domain layer is not focused on the nuts and bolts of a web app (GETs, POSTs, message queues, etc.), it only focuses on the core application and how it behaves.
 
-## Running
+## Using
 
 ```bash
-dotnet run
+dotnet add reference <relative path>/Pick-em.Lib.Domain.csproj
 ```
+
+## Interface
+
+@TODO
 
 ## Dependencies
 
