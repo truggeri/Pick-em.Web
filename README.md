@@ -16,4 +16,22 @@ This projet will be written with ASP.NET in C# with dotnet core 2.1. The data st
 
 ## Architecture
 
-This section will be fleshed out more as the project is worked on, but to start with, this project will focus on maintaining a layered architecture with the web layer, service/application layer, domain layer, and data access layer. For the scope of this project, I don't want to get into [CQRS](https://martinfowler.com/bliki/CQRS.html) or microservices. For an example that experiments with that pattern, see the [Books project](https://github.com/truggeri/Books.Service.Transaction).
+This section will be fleshed out more as the project is worked on, but to start with, this project will focus on maintaining a layered architecture with four layers:  web, service, domain and data. For the scope of this project, I don't want to get into [CQRS](https://martinfowler.com/bliki/CQRS.html) or microservices. For an example that experiments with those patterns, see the [Books project](https://github.com/truggeri/Books.Service.Transaction). Each layer is implemented in its own unique project such that the dependencies between layers are the same as the dependencies between cs projects.
+
+The following details each layer from the bottom up.
+
+### Data
+
+The purpose of this layer is to provide access to the data storage mechanism (DB). This layer will _not_ be implemented with the use of an ORM. For more details on this layer, visit the [README](src/Pick-em.Lib.Data/README.md) in the project file.
+
+### Domain
+
+The purpose of this layer is to provide teh domain level logic. Domain logic (as defined in Domain Driven Design), is the core "business" logic of the application. This is the structure that creates the basis for the application - in this case the classes for teams, matchups, picks, weeks, seasons, etc. For more details on this layer, visit the [README](src/Pick-em.Lib.Domain/README.md) in the project file.
+
+### Service (Application)
+
+The purpose of this layer is to provide logic for incoming and outgoing requests. You could draw a comparison to the "Controller" from an MVC pattern, where this layer is acting to controll logic for fetching and creating/updating data. None of this logic lives in the view layer that users see, but there is still a large amount of practical plubming that is not part of the core domain. For more details on this layer, visit the [README](src/Pick-em.Lib.Service/README.md) in the project file.
+
+### Web
+
+This layer is the front-end views that users utilize to interact with the application. As little logic as possible should be in this layer. For more details on this layer, visit the [README](src/Pick-em.Web/README.md) in the project file.
