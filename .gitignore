@@ -4,3 +4,5 @@ out/
 
 tasks.json
 launch.json
+
+config/
