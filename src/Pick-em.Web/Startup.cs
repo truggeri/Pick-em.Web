@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Pick_em.Lib.Data.Extensions;
 using Serilog;
 
 namespace Pick_em.Web
@@ -32,6 +33,7 @@ namespace Pick_em.Web
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.DataConfiguration(Configuration);
             services.AddMvc();
         }
 
