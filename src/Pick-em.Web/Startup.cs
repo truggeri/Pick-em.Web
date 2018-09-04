@@ -24,6 +24,7 @@ namespace Pick_em.Web
 
             Log.Logger = new LoggerConfiguration()
                 .ReadFrom.Configuration(Configuration)
+                .Enrich.FromLogContext()
                 .WriteTo.Console()
                 .CreateLogger();
 
@@ -39,10 +40,8 @@ namespace Pick_em.Web
             services.AddMvc();
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            loggerFactory.AddSerilog();
-
             var dbUtils = app.ApplicationServices.GetRequiredService<DatabaseUtils>();
             if (!dbUtils.Startup())
             {
