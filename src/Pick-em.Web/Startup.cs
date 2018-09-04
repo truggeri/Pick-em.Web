@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Pick_em.Lib.Data;
 using Pick_em.Lib.Data.Extensions;
 using Serilog;
 
@@ -16,6 +17,7 @@ namespace Pick_em.Web
             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                .AddJsonFile("localsettings.json", optional: true, reloadOnChange: false)
                 .AddEnvironmentVariables();
 
             Configuration = builder.Build();
@@ -41,6 +43,10 @@ namespace Pick_em.Web
         {
             loggerFactory.AddSerilog();
 
+            var dbUtils = app.ApplicationServices
+                    .GetRequiredService<DatabaseUtils>();
+            dbUtils.Connect();
+                    
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
