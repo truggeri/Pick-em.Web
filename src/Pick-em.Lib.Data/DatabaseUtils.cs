@@ -13,7 +13,21 @@ namespace Pick_em.Lib.Data
             this.dbConnection = givenConn;
         }
 
-        public void Connect()
+        public bool Startup()
+        {
+            bool successful = true;
+            try
+            {
+                this.connect();
+            }
+            catch
+            {
+                successful = false;
+            }
+            return successful;
+        }
+
+        private void connect()
         {
             this.dbConnection.Open();
         }

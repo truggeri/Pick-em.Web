@@ -24,10 +24,10 @@ namespace Pick_em.Web
 
             Log.Logger = new LoggerConfiguration()
                 .ReadFrom.Configuration(Configuration)
-                //.WriteTo.Console()
+                .WriteTo.Console()
                 .CreateLogger();
 
-            Log.Information("Starting Pick-em.Web");
+            Log.Logger.Information("Starting Pick-em.Web...");
         }
 
         public IConfiguration Configuration { get; }
@@ -43,7 +43,13 @@ namespace Pick_em.Web
         {
             loggerFactory.AddSerilog();
 
-            DataConfigurationExtension.DataStartup(app.ApplicationServices.GetRequiredService<DatabaseUtils>());
+            var dbUtils = app.ApplicationServices.GetRequiredService<DatabaseUtils>();
+            if (!dbUtils.Startup())
+            {
+                Log.Logger.Fatal("Connection to database was not successful");
+                var lifeTime = app.ApplicationServices.GetRequiredService<IApplicationLifetime>();
+                lifeTime.StopApplication();
+            }
                     
             if (env.IsDevelopment())
             {
