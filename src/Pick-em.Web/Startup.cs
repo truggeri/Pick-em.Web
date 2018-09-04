@@ -43,9 +43,7 @@ namespace Pick_em.Web
         {
             loggerFactory.AddSerilog();
 
-            var dbUtils = app.ApplicationServices
-                    .GetRequiredService<DatabaseUtils>();
-            dbUtils.Connect();
+            DataConfigurationExtension.DataStartup(app.ApplicationServices.GetRequiredService<DatabaseUtils>());
                     
             if (env.IsDevelopment())
             {

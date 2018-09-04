@@ -13,5 +13,10 @@ namespace Pick_em.Lib.Data.Extensions
             services.AddSingleton<NpgsqlConnection>(new NpgsqlConnection(config.GetConnectionString("Lib.Data")));
             services.AddSingleton<DatabaseUtils>();
         }
+
+        public static void DataStartup(DatabaseUtils dbUtils)
+        {
+            dbUtils.Connect();
+        }
     }
 }
