@@ -2,7 +2,8 @@
 
 namespace Pick_em.Lib.Domain
 {
-    public class Class1
+    public interface IDomainObject
     {
+        Guid GetId();
     }
 }
