@@ -1,9 +1,7 @@
 using System;
-using System.Runtime.CompilerServices;
 
 using Pick_em.Lib.Models;
 
-[assembly:InternalsVisibleTo("Pick-em.Lib.Domain.Test")]
 namespace Pick_em.Lib.Domain
 {
     /// <summary>
@@ -67,6 +65,7 @@ namespace Pick_em.Lib.Domain
         public void PutInGameDay(GameDay gameDay)
         {
             this.model.GameDay = gameDay.GetId();
+            gameDay.games.Add(this);
         }
     }
 }
