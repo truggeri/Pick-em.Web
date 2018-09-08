@@ -1,13 +1,15 @@
 using System;
+using System.Runtime.CompilerServices;
 
 using Pick_em.Lib.Models;
 
+[assembly:InternalsVisibleTo("Pick-em.Lib.Domain.Test")]
 namespace Pick_em.Lib.Domain
 {
     /// <summary>
     /// A single game.
     /// </summary>
-    public class Game : IDomainObject
+    public class Game
     {
         private GameModel model { get; }
         
@@ -53,7 +55,7 @@ namespace Pick_em.Lib.Domain
         /// <returns>
         /// Guid that represents the underlying model.
         /// </returns>
-        public Guid GetId()
+        internal Guid GetId()
         {
             return this.model.Id;
         }
