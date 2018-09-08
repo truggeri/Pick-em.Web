@@ -4,9 +4,9 @@ namespace Pick_em.Lib.Models
 {
     public class GameModel : BaseModel
     {
-        public TeamModel HomeTeam;
-        public TeamModel AwayTeam;
-        public GameDayModel GameDay;
+        public Guid HomeTeam;
+        public Guid AwayTeam;
+        public Guid GameDay;
         public GameWinner Winner;
         public bool Played;
         public DateTime StartTime;
