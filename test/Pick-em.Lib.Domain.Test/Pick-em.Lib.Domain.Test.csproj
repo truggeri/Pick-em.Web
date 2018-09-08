@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Pick-em.Lib.Domain\Pick-em.Lib.Domain.csproj" />
+    <ProjectReference Include="..\..\src\Pick-em.Lib.Models\Pick-em.Lib.Models.csproj" />
   </ItemGroup>
 
 </Project>
