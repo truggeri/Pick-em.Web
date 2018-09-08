@@ -7,7 +7,7 @@ namespace Pick_em.Lib.Domain
     /// <summary>
     /// A single game.
     /// </summary>
-    public class Game
+    public class Game : IDomainObject
     {
         private GameModel model { get; }
         
@@ -45,6 +45,17 @@ namespace Pick_em.Lib.Domain
                 }
                 return null;
             }
+        }
+
+        /// <summary>
+        /// Gives the Id of the underlying model.
+        /// </summary>
+        /// <returns>
+        /// Guid that represents the underlying model.
+        /// </returns>
+        public Guid GetId()
+        {
+            return this.model.Id;
         }
     }
 }

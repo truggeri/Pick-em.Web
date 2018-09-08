@@ -8,17 +8,26 @@ namespace Pick_em.Lib.Domain.Test
 {
     public class GameTest
     {
+        private const string UNIQUE_GUID = "2ff6c9f9-6ca2-4ef8-a947-cd2926da3f49";
         private GameModel model { get; set; }
         private Game dut { get; set; }
 
         public GameTest()
         {
             this.model = new GameModel()
-            { 
+            {
+                Id = new Guid(UNIQUE_GUID),
                 HomeTeam = new TeamModel() { Name = "HomeTeam" },
                 AwayTeam = new TeamModel() { Name = "AwayTeam" }
             };
             this.dut = new Game(this.model);
+        }
+
+        [Fact]
+        public void TestId_WhenCalled_GivesGuid()
+        {
+            Guid result = this.dut.GetId();
+            Assert.True(result.Equals(new Guid(UNIQUE_GUID)));
         }
 
         [Fact]
