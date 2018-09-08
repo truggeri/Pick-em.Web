@@ -33,7 +33,7 @@ namespace Pick_em.Lib.Domain
         /// <summary>
         /// Gives the winner of the game or null if no outright winner.
         /// </summary>
-        public TeamModel Winner { 
+        public Guid? Winner { 
             get
             {
                 if (this.Played)
