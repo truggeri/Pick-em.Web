@@ -85,5 +85,19 @@ namespace Pick_em.Lib.Domain.Test
             Guid? result = this.dut.Winner;
             Assert.Null(result);
         }
+
+        [Fact]
+        public void TestPutInGameDay_WhenGiven_ThenUpdated()
+        {
+            Guid expected = Guid.NewGuid();
+            GameDayModel gdModel = new GameDayModel() {
+                Id = expected
+            };
+            GameDay gd = new GameDay(gdModel);
+            
+            this.dut.PutInGameDay(gd);
+
+            Assert.True(expected.Equals(this.model.GameDay));
+        }
     }
 }

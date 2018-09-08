@@ -59,5 +59,14 @@ namespace Pick_em.Lib.Domain
         {
             return this.model.Id;
         }
+
+        /// <summary>
+        /// Adds a reference to the given GameDay to this Game.
+        /// </summary>
+        /// <param name="gameDay">The GameDay that this Game belongs to.</param>
+        public void PutInGameDay(GameDay gameDay)
+        {
+            this.model.GameDay = gameDay.GetId();
+        }
     }
 }
