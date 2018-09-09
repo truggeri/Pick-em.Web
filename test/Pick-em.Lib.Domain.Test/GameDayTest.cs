@@ -93,5 +93,19 @@ namespace Pick_em.Lib.Domain.Test
 
             Assert.False(result);
         }
+
+        [Fact]
+        public void TestPutInSeason_WhenGiven_ThenUpdated()
+        {
+            Guid expected = Guid.NewGuid();
+            SeasonModel seasonModel = new SeasonModel() {
+                Id = expected
+            };
+            Season season = new Season(seasonModel);
+            
+            this.dut.PutInSeason(season);
+
+            Assert.True(expected.Equals(this.model.Season));
+        }
     }
 }
