@@ -56,5 +56,15 @@ namespace Pick_em.Lib.Domain
         {
             return this.model.Id;
         }
+
+        /// <summary>
+        /// Adds a reference to the given Season to this GameDay.
+        /// </summary>
+        /// <param name="season">The Season that this GameDay belongs to.</param>
+        public void PutInSeason(Season season)
+        {
+            this.model.Season = season.GetId();
+            season.gameDays.Add(this);
+        }
     }
 }
