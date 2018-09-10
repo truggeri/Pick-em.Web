@@ -17,6 +17,12 @@ namespace Pick_em.Lib.Domain
             this.model = givenModel;
         }
 
+        public PickChoice Choice
+        {
+            get { return (this.model.PickedHomeTeam) ? PickChoice.HomeTeam : PickChoice.AwayTeam; }
+            set { this.model.PickedHomeTeam = (value == PickChoice.HomeTeam); }
+        }
+
         /// <summary>
         /// Gives the Id of the underlying model.
         /// </summary>
@@ -37,4 +43,6 @@ namespace Pick_em.Lib.Domain
             this.model.Game = game.GetId();
         }
     }
+
+    public enum PickChoice { HomeTeam, AwayTeam }
 }

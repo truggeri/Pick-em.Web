@@ -30,6 +30,22 @@ namespace Pick_em.Lib.Domain.Test
         }
 
         [Fact]
+        public void TestChoice_WhenHome_ThenTrue()
+        {
+            this.dut.Choice = PickChoice.HomeTeam;
+            bool result = this.model.PickedHomeTeam;
+            Assert.True(result);
+        }
+
+        [Fact]
+        public void TestChoice_WhenAway_ThenFalse()
+        {
+            this.dut.Choice = PickChoice.AwayTeam;
+            bool result = this.model.PickedHomeTeam;
+            Assert.False(result);
+        }
+
+        [Fact]
         public void TestAssignGame_WhenGiven_ThenUpdated()
         {
             Guid expected = Guid.NewGuid();
