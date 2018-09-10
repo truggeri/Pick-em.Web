@@ -21,6 +21,22 @@ namespace Pick_em.Lib.Domain
         }
 
         /// <summary>
+        /// The primary team color.
+        /// </summary>
+        public string PrimaryColor {
+            get { return this.model.PrimaryColor; }
+            set { this.model.PrimaryColor = value; }
+        }
+
+        /// <summary>
+        /// The secondary team color.
+        /// </summary>
+        public string SecondaryColor {
+            get { return this.model.SecondaryColor; }
+            set { this.model.SecondaryColor = value; }
+        }
+
+        /// <summary>
         /// Gives the Id of the underlying model.
         /// </summary>
         /// <returns>

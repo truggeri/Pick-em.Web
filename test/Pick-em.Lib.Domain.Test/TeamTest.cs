@@ -28,5 +28,41 @@ namespace Pick_em.Lib.Domain.Test
             Guid result = this.dut.GetId();
             Assert.True(result.Equals(uniqueGuid));
         }
+
+        [Fact]
+        public void TestPrimaryColor_WhenSet_ThenReturned()
+        {
+            string expected = "#FF6600";
+            string notExpected = "#000";
+            this.dut.PrimaryColor = expected;
+            this.dut.SecondaryColor = notExpected;
+            string result = this.dut.PrimaryColor;
+            Assert.Equal(result, expected);
+        }
+
+        [Fact]
+        public void TestPrimaryColor_WhenNotSet_ThenEmpty()
+        {
+            string result = this.dut.PrimaryColor;
+            Assert.True(String.IsNullOrEmpty(result));
+        }
+
+        [Fact]
+        public void TestSecondaryColor_WhenSet_ThenReturned()
+        {
+            string expected = "#000";
+            string notExpected = "#FF6600";
+            this.dut.PrimaryColor = notExpected;
+            this.dut.SecondaryColor = expected;
+            string result = this.dut.SecondaryColor;
+            Assert.Equal(result, expected);
+        }
+
+        [Fact]
+        public void TestSecondaryColor_WhenNotSet_ThenEmpty()
+        {
+            string result = this.dut.SecondaryColor;
+            Assert.True(String.IsNullOrEmpty(result));
+        }
     }
 }
