@@ -27,5 +27,14 @@ namespace Pick_em.Lib.Domain
         {
             return this.model.Id;
         }
+
+        /// <summary>
+        /// Adds a reference to the given Game to this Pick.
+        /// </summary>
+        /// <param name="game">The Game that this Pick belongs to.</param>
+        public void AssignGame(Game game)
+        {
+            this.model.Game = game.GetId();
+        }
     }
 }

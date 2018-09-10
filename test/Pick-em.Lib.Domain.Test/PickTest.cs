@@ -28,5 +28,19 @@ namespace Pick_em.Lib.Domain.Test
             Guid result = this.dut.GetId();
             Assert.True(result.Equals(uniqueGuid));
         }
+
+        [Fact]
+        public void TestAssignGame_WhenGiven_ThenUpdated()
+        {
+            Guid expected = Guid.NewGuid();
+            GameModel gModel = new GameModel() {
+                Id = expected
+            };
+            Game g = new Game(gModel);
+            
+            this.dut.AssignGame(g);
+
+            Assert.True(expected.Equals(this.model.Game));
+        }
     }
 }
