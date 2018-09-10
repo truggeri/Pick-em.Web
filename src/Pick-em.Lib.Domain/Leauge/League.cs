@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 using Pick_em.Lib.Models;
 
@@ -12,12 +13,18 @@ namespace Pick_em.Lib.Domain
         private LeagueModel model { get; }
 
         /// <summary>
+        /// Collection of Teams that are part of the League.
+        /// </summary>
+        internal List<Team> teams { get; }
+
+        /// <summary>
         /// Creates a new league.
         /// </summary>
         /// <param name="givenModel"> The LeagueModel that holds data about this team.</param>
         public League(LeagueModel givenModel)
         {
             this.model = givenModel;
+            this.teams = new List<Team>();
         }
 
         /// <summary>

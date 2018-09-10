@@ -64,5 +64,19 @@ namespace Pick_em.Lib.Domain.Test
             string result = this.dut.SecondaryColor;
             Assert.True(String.IsNullOrEmpty(result));
         }
+
+        [Fact]
+        public void TestAddToLeague_WhenGiven_ThenUpdated()
+        {
+            Guid expected = Guid.NewGuid();
+            LeagueModel leagueModel = new LeagueModel() {
+                Id = expected
+            };
+            League league = new League(leagueModel);
+            
+            this.dut.AddToLeague(league);
+
+            Assert.True(expected.Equals(this.model.League));
+        }
     }
 }

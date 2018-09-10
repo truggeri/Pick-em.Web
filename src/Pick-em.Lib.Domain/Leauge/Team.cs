@@ -46,5 +46,15 @@ namespace Pick_em.Lib.Domain
         {
             return this.model.Id;
         }
+
+        /// <summary>
+        /// Adds a reference to the given League to this Team.
+        /// </summary>
+        /// <param name="league">The League that this Team belongs to.</param>
+        public void AddToLeague(League league)
+        {
+            this.model.League = league.GetId();
+            league.teams.Add(this);
+        }
     }
 }
