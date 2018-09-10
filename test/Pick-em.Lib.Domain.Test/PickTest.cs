@@ -46,6 +46,15 @@ namespace Pick_em.Lib.Domain.Test
         }
 
         [Fact]
+        public void TestPicker_WhenSet_ThenReturned()
+        {
+            Guid expected = Guid.NewGuid();
+            this.model.Picker = expected;
+            Guid result = this.dut.Picker;
+            Assert.Equal(result, expected);
+        }
+
+        [Fact]
         public void TestAssignGame_WhenGiven_ThenUpdated()
         {
             Guid expected = Guid.NewGuid();

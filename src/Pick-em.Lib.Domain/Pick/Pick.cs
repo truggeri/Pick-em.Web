@@ -17,10 +17,21 @@ namespace Pick_em.Lib.Domain
             this.model = givenModel;
         }
 
+        /// <summary>
+        /// Choice of this pick - home team or away team.
+        /// </summary>
         public PickChoice Choice
         {
             get { return (this.model.PickedHomeTeam) ? PickChoice.HomeTeam : PickChoice.AwayTeam; }
             set { this.model.PickedHomeTeam = (value == PickChoice.HomeTeam); }
+        }
+
+        /// <summary>
+        /// The user/person that made this Pick.
+        /// </summary>
+        public Guid Picker
+        {
+            get { return this.model.Picker; }
         }
 
         /// <summary>
