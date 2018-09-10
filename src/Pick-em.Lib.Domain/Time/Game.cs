@@ -12,7 +12,7 @@ namespace Pick_em.Lib.Domain
         private GameModel model { get; }
         
         /// <summary>
-        /// Creates a new game given two teams.
+        /// Creates a new game.
         /// </summary>
         /// <param name="givenModel"> The GameModel that holds data about this game.</param>
         public Game (GameModel givenModel)
