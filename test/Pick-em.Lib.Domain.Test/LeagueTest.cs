@@ -25,8 +25,8 @@ namespace Pick_em.Lib.Domain.Test
         [Fact]
         public void TestId_WhenCalled_GivesGuid()
         {
-            // Guid result = this.dut.GetId();
-            // Assert.True(result.Equals(uniqueGuid));
+            Guid result = this.dut.GetId();
+            Assert.True(result.Equals(uniqueGuid));
         }
     }
 }
