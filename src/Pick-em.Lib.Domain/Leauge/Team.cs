@@ -1,3 +1,5 @@
+using System;
+
 using Pick_em.Lib.Models;
 
 namespace Pick_em.Lib.Domain
@@ -16,6 +18,17 @@ namespace Pick_em.Lib.Domain
         public Team(TeamModel givenModel)
         {
             this.model = givenModel;
+        }
+
+        /// <summary>
+        /// Gives the Id of the underlying model.
+        /// </summary>
+        /// <returns>
+        /// Guid that represents the underlying model.
+        /// </returns>
+        internal Guid GetId()
+        {
+            return this.model.Id;
         }
     }
 }

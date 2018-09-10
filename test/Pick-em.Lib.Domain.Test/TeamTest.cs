@@ -21,5 +21,12 @@ namespace Pick_em.Lib.Domain.Test
             };
             this.dut = new Team(this.model);
         }
+
+        [Fact]
+        public void TestId_WhenCalled_GivesGuid()
+        {
+            Guid result = this.dut.GetId();
+            Assert.True(result.Equals(uniqueGuid));
+        }
     }
 }
