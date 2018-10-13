@@ -6,16 +6,27 @@
     Gray:       #333F48
 */
 
-body {
-    font-family: 'Arimo', sans-serif;
-    color: #333F48;
-}
-
 .bg-brand-color {    
     background-color: #BF5700;
     background-image: linear-gradient(to bottom right, #bf5700 0%, #bf5700 30%, #f88638 100%);
     color: #333F48;
     height: 64px;
+}
+
+body {
+    font-family: 'Arimo', sans-serif;
+    color: #333F48;
+}
+
+.copyright {
+    position: absolute;
+    bottom: 0;
+    padding: 16px 32px 16px 32px;
+    font-size: 12px;
+}
+
+.main-content {
+    padding: 16px;
 }
 
 .navbar {
@@ -28,19 +39,4 @@ body {
 
 .nav-logo-space {
     margin-left: 32px;
-}
-
-.main-content {
-    padding: 16px;
-}
-
-h2 {
-    color: #333F48;
-}
-
-.copyright {
-    position: absolute;
-    bottom: 0;
-    padding: 16px 32px 16px 32px;
-    font-size: 12px;
 }
