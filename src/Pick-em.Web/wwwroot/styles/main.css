@@ -26,6 +26,10 @@ body {
     color: #333F48;
 }
 
+.nav-logo-space {
+    margin-left: 32px;
+}
+
 .main-content {
     padding: 16px;
 }
