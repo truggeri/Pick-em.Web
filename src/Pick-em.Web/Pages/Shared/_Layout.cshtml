@@ -6,16 +6,19 @@
     <title>@ViewData["Title"] - Pick-em</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
+    <link rel="stylesheet" href="~/styles/main.css" />
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand" href="#">Pick-em</a>
-        </nav>
-    </header>
-    <div class="container">
+    <partial name="_TopNavPartial" />
+
+    <div class="container main-content">
     @RenderBody()
     </div>
+
+    <footer class="copyright">
+        <span>&copy; 2018 - Pick-em</span>
+    </footer>
 </body>
 </html>
