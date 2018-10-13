@@ -1,0 +1,42 @@
+/*
+    Colors - https://material.io/tools/color/#!/?view.left=0&view.right=1
+    Primary:    #bf5700
+    Light:      #f88638
+    Dark:       #882a00
+    Gray:       #333F48
+*/
+
+.bg-brand-color {    
+    background-color: #BF5700;
+    background-image: linear-gradient(to bottom right, #bf5700 0%, #bf5700 30%, #f88638 100%);
+    color: #333F48;
+    box-shadow: 0px 2px 8px #333F48;
+}
+
+body {
+    font-family: 'Arimo', sans-serif;
+    color: #333F48;
+}
+
+.copyright {
+    position: absolute;
+    bottom: 0;
+    padding: 16px 32px 16px 32px;
+    font-size: 12px;
+}
+
+.main-content {
+    padding: 16px;
+}
+
+.navbar {
+    font-family: 'Arimo', sans-serif;
+}
+
+.nav-link {
+    color: #333F48;
+}
+
+.nav-logo-space {
+    margin-left: 32px;
+}
