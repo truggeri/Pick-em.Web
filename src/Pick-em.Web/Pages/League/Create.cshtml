@@ -1,0 +1,26 @@
+@page
+@model LeagueViewModel
+@{
+    ViewData["Title"] = "Create League";
+}
+
+<h2>Create a League</h2>
+
+<br />
+<div class="content">
+    <form method="POST">
+        <div class="form-group">
+            <label for="name">League Name</label>
+            <input asp-for="Model.Name" type="text" class="form-control" id="name" aria-describedby="name" placeholder="Name">
+        </div>
+        <div class="form-group">
+            <label for="name">League Sport</label>
+            <input asp-for="Model.Sport" type="text" class="form-control" id="sport" aria-describedby="sport" placeholder="Sport">
+        </div>
+        <div class="form-group">
+            <label for="name">League Location</label>
+            <input asp-for="Model.Location" type="text" class="form-control" id="location" aria-describedby="location" placeholder="Location">
+        </div>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+</div>
