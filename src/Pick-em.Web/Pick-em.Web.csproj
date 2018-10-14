@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Pick-em.Lib.Data\Pick-em.Lib.Data.csproj" />
+    <ProjectReference Include="..\Pick-em.Lib.Models\Pick-em.Lib.Models.csproj" />
   </ItemGroup>
 
 </Project>
