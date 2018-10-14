@@ -7,9 +7,8 @@ namespace Pick_em.Web.Pages
 {
     public class LeagueViewModel : PageModel
     {
-        public string Name { get; set; }
-
-        public LeagueModel Model { get; set; }
+        [BindProperty]
+        public LeagueModel LeagueModel { get; set; }
 
         public void OnGet()
         {
@@ -22,6 +21,9 @@ namespace Pick_em.Web.Pages
             {
                 return Page();
             }
+            Console.WriteLine($"Creating league with\n\tName={LeagueModel.Name}");
+            System.Console.WriteLine($"\tLocation={LeagueModel.Location}");
+            System.Console.WriteLine($"\tSport={LeagueModel.Sport}");
 
             return RedirectToPage("/League/Index");
         }
