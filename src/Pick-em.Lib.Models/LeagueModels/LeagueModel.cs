@@ -4,8 +4,8 @@ namespace Pick_em.Lib.Models
 {
     public class LeagueModel : BaseModel
     {
-        public string Name;
-        public string Sport;
-        public string Location;
+        public string Name { get; set; }
+        public string Sport { get; set; }
+        public string Location { get; set; }
     }
 }
