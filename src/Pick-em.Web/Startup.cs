@@ -40,7 +40,7 @@ namespace Pick_em.Web
             services.AddMvc();
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             var dbUtils = app.ApplicationServices.GetRequiredService<DatabaseUtils>();
             if (!dbUtils.Startup())
@@ -49,6 +49,8 @@ namespace Pick_em.Web
                 var lifeTime = app.ApplicationServices.GetRequiredService<IApplicationLifetime>();
                 lifeTime.StopApplication();
             }
+
+            loggerFactory.AddSerilog();
                     
             if (env.IsDevelopment())
             {
