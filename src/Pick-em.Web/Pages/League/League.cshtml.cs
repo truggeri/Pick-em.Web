@@ -1,12 +1,22 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Logging;
 using Pick_em.Lib.Models;
 
 namespace Pick_em.Web.Pages
 {
     public class LeagueViewModel : PageModel
     {
+        private ILogger logger { get; }
+
+        public LeagueViewModel(
+            ILogger<LeagueViewModel> givenLogger
+        )
+        {
+            this.logger = givenLogger;
+        }
+
         [BindProperty]
         public LeagueModel LeagueModel { get; set; }
 
@@ -21,9 +31,7 @@ namespace Pick_em.Web.Pages
             {
                 return Page();
             }
-            Console.WriteLine($"Creating league with\n\tName={LeagueModel.Name}");
-            System.Console.WriteLine($"\tLocation={LeagueModel.Location}");
-            System.Console.WriteLine($"\tSport={LeagueModel.Sport}");
+            this.logger.LogTrace($"Creating league with\n\tName={LeagueModel.Name}, Sport={LeagueModel.Sport}, Location={LeagueModel.Location}");
 
             return RedirectToPage("/League/Index");
         }
